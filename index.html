@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MinumKopi - Cafe</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- My Style -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Minum<span>Kopi</span>.</a>
+
+    <div class="navbar-nav">
+      <a href="#home">Home</a>
+      <a href="#about">Tentang Kami</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="search-button"><i data-feather="search"></i></a>
+      <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+
+    <!-- Search Form start -->
+    <div class="search-form">
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box"><i data-feather="search"></i></label>
+    </div>
+    <!-- Search Form end -->
+
+    <!-- Shopping Cart start -->
+    <div class="shopping-cart">
+      
+      <div class="cart-item">
+        <div class="item-detail">
+          <h3>Espresso</h3>
+          <div class="item-price">IDR 18K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+
+      <div class="cart-item">
+        <div class="item-detail">
+          <h3>Caramel Macchiato</h3>
+          <div class="item-price">IDR 30K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+
+      <div class="cart-item">
+        <div class="item-detail">
+          <h3>Matcha Latte</h3>
+          <div class="item-price">IDR 28K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+
+      <div class="cart-total">
+        <h4>Total: <span>IDR 76K</span></h4>
+      </div>
+      
+    </div>
+    <!-- Shopping Cart end -->
+
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Hero Section start -->
+  <section class="hero" id="home">
+    <div class="mask-container">
+      <main class="content">
+        <h1>Nikmati Secangkir <span>Kopi</span></h1>
+        <p>"Bukan sekadar rasa, tapi cerita. Teman terbaik untuk jiwamu yang lelah."</p>
+        <a href="#menu" class="cta">Pesan Sekarang</a>
+      </main>
+    </div>
+  </section>
+  <!-- Hero Section end -->
+
+  <!-- About Section start -->
+  <section id="about" class="about">
+    <h2><span>Tentang</span> Kami</h2>
+
+    <div class="row">
+      <div class="about-img">
+        <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+      </div>
+      <div class="content">
+        <h3>Kenapa memilih <span class="logo-text">Minum<span>Kopi</span></span>?</h3>
+        
+        <p>Bukan sekadar air hitam biasa. Kami menggunakan biji kopi pilihan dari petani lokal terbaik, diproses dengan teknik roasting presisi untuk mengeluarkan karakter rasa yang mendalam dan aroma yang memikat.</p>
+        
+        <p>Lebih dari sekadar rasa, kami menawarkan ketenangan. Tempat yang sempurna untuk lari sejenak dari kebisingan dunia, entah untuk bekerja, melamun, atau sekadar menikmati waktu yang berjalan lambat.</p>
+      </div>
+    </div>
+  </section>
+  <!-- About Section end -->
+
+  <!-- Menu Section start -->
+  <section id="menu" class="menu">
+    <h2><span>Menu</span> Kami</h2>
+
+    <div class="menu-container">
+      
+      <div class="menu-column">
+        <h3 class="menu-category">Hot Coffee</h3>
+        
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Espresso</h4>
+            <p>Single shot pure coffee extract</p>
+          </div>
+          <div class="menu-item-price">18K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Americano</h4>
+            <p>Espresso with hot water</p>
+          </div>
+          <div class="menu-item-price">20K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Cappuccino</h4>
+            <p>Espresso, steamed milk, & foam</p>
+          </div>
+          <div class="menu-item-price">25K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+        
+         <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Cafe Latte</h4>
+            <p>Espresso with steamed milk</p>
+          </div>
+          <div class="menu-item-price">25K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+      </div>
+
+      <div class="menu-column">
+        <h3 class="menu-category">Cold Brew & Others</h3>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Iced Americano</h4>
+            <p>Espresso with cold water & ice</p>
+          </div>
+          <div class="menu-item-price">22K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Caramel Macchiato</h4>
+            <p>Espresso, milk, vanilla & caramel</p>
+          </div>
+          <div class="menu-item-price">30K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Matcha Latte</h4>
+            <p>Pure matcha with fresh milk</p>
+          </div>
+          <div class="menu-item-price">28K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-item-text">
+            <h4>Chocolate Signature</h4>
+            <p>Dark chocolate with milk</p>
+          </div>
+          <div class="menu-item-price">26K</div>
+          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Menu Section end -->
+
+  <!-- Contact Section start -->
+  <section id="contact" class="contact">
+    <h2><span>Kontak</span> Kami</h2>
+    <p>Setiap cangkir punya cerita, dan ceritamu dimulai di sini. Kunjungi kami untuk pengalaman rasa yang tak terlupakan.
+    </p>
+
+    <div class="row">
+      <iframe
+        src="https://maps.google.com/maps?q=Pamekasan,+Jawa+Timur&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+
+      <form action="">
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" placeholder="nama">
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="text" placeholder="email">
+        </div>
+        <div class="input-group">
+          <i data-feather="phone"></i>
+          <input type="text" placeholder="no hp">
+        </div>
+        <button type="submit" class="btn">kirim pesan</button>
+      </form>
+
+    </div>
+  </section>
+  <!-- Contact Section end -->
+
+  <!-- Footer start -->
+  <footer>
+    <div class="socials">
+      <a href="#"><i data-feather="instagram"></i></a>
+      <a href="#"><i data-feather="twitter"></i></a>
+      <a href="#"><i data-feather="facebook"></i></a>
+    </div>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">Tentang Kami</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="credit">
+      <p>Created by <a href="https://github.com/ofikur" target="_blank" >Ofikur R.</a>. | &copy; 2025.</p>
+    </div>
+  </footer>
+  <!-- Footer end -->
+
+  <!-- Feather Icons -->
+  <script>
+    feather.replace()
+  </script>
+
+  <!-- My Javascript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
