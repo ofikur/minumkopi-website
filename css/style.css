@@ -193,6 +193,31 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+.shopping-cart .checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(205, 164, 94, 0.3);
+  margin-top: 2rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.shopping-cart .checkout-btn:hover {
+  background-color: transparent;
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
 /* Detail Item */
 .shopping-cart .cart-item .item-detail h3 {
   font-size: 1.2rem;
