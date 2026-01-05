@@ -40,13 +40,14 @@ Proyek ini dibangun menggunakan teknologi web standar dengan praktik terbaik (*b
 ```text
 minumkopi/
 ├── css/
-│   └── style.css       # Stylesheet utama (Variables, Layout, Components)
+│   └── style.css       # Stylesheet utama
 ├── img/
 │   ├── favicon/        # Aset ikon website
 │   ├── product/        # Gambar produk kopi
 │   ├── profile/        # Gambar testimoni pelanggan
-│   ├── background.webp # Gambar hero section
-│   └── tentang-kami.webp
+│   └── background.webp # Gambar hero section
+├── screenshot/
+│   └── preview-website.png # Screenshot tampilan website
 ├── js/
 │   └── script.js       # Logika JavaScript utama
 ├── index.html          # Halaman utama
