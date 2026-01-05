@@ -1,269 +1,506 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MinumKopi - Cafe</title>
+  <title>MinumKopi - Authentic Coffee Space</title>
 
-  <!-- Fonts -->
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+
+  <!-- Google Fonts CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <!-- Feather Icons -->
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://unpkg.com/feather-icons"></script>
-
-  <!-- My Style -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <div class="loader-text">Loading...</div>
+  </div>
+  <!-- End Loader -->
 
-  <!-- Navbar start -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navbar -->
   <nav class="navbar">
-    <a href="#" class="navbar-logo">Minum<span>Kopi</span>.</a>
+    <a href="#" class="navbar-logo logo-tilt" data-text="MinumKopi.">Minum<span class="italic-font">Kopi</span>.</a>
 
     <div class="navbar-nav">
       <a href="#home">Home</a>
-      <a href="#about">Tentang Kami</a>
+      <a href="#about">Tentang</a>
       <a href="#menu">Menu</a>
+      <a href="#products">Produk</a>
       <a href="#contact">Kontak</a>
     </div>
 
+    <!-- Navbar Extra -->
     <div class="navbar-extra">
       <a href="#" id="search-button"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+      <a href="#" id="shopping-cart-button">
+        <i data-feather="shopping-cart"></i>
+        <span class="quantity-badge">4</span>
+      </a>
+      <a href="#" id="user-button"><i data-feather="user"></i></a>
       <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
+    <!-- End Navbar Extra -->
 
-    <!-- Search Form start -->
+    <!-- Search Form -->
     <div class="search-form">
-      <input type="search" id="search-box" placeholder="search here...">
+      <input type="search" id="search-box" placeholder="Cari menu favoritmu...">
       <label for="search-box"><i data-feather="search"></i></label>
     </div>
-    <!-- Search Form end -->
+    <!-- End Search Form -->
 
-    <!-- Shopping Cart start -->
+    <!-- Shopping Cart -->
     <div class="shopping-cart">
+      <div class="cart-header">
+          <h3>Keranjang Kamu</h3>
+          <a href="#" id="close-cart-btn"><i data-feather="x"></i></a>
+      </div>
       
-      <div class="cart-item">
-        <div class="item-detail">
-          <h3>Espresso</h3>
-          <div class="item-price">IDR 18K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
+      <div class="cart-items-container">
+          <div class="cart-item">
+            <div class="item-detail">
+              <h3>Espresso</h3>
+              <div class="item-price">IDR 18K <span class="item-qty">x 1</span></div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+          
+          <div class="cart-item">
+            <div class="item-detail">
+              <h3>Caramel Macchiato</h3>
+              <div class="item-price">IDR 30K <span class="item-qty">x 2</span></div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-detail">
+              <h3>Latte Art</h3>
+              <div class="item-price">IDR 25K <span class="item-qty">x 1</span></div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-detail">
+              <h3>Cold Brew</h3>
+              <div class="item-price">IDR 25K <span class="item-qty">x 1</span></div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+
+           <div class="cart-item">
+            <div class="item-detail">
+              <h3>Kopi Tubruk</h3>
+              <div class="item-price">IDR 15K <span class="item-qty">x 1</span></div>
+            </div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
       </div>
 
-      <div class="cart-item">
-        <div class="item-detail">
-          <h3>Caramel Macchiato</h3>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
+      <div class="cart-footer">
+          <div class="cart-total">
+            <h4>Total: <span>IDR 143K</span></h4>
+          </div>
+          <button type="button" class="checkout-btn">Checkout <i class="fas fa-arrow-right"></i></button>
       </div>
-
-      <div class="cart-item">
-        <div class="item-detail">
-          <h3>Matcha Latte</h3>
-          <div class="item-price">IDR 28K</div>
-        </div>
-        <i data-feather="trash-2" class="remove-item"></i>
-      </div>
-
-      <div class="cart-total">
-        <h4>Total: <span>IDR 76K</span></h4>
-      </div>
-
-      <button type="button" class="checkout-btn">Checkout Sekarang</button>
-      
     </div>
-    <!-- Shopping Cart end -->
+    <!-- End Shopping Cart -->
 
+    <!-- User Menu -->
+    <div class="user-form">
+      <div class="login-form" id="login-form-box">
+        <h3>Selamat Datang Kembali!</h3>
+        <form action="">
+          <div class="box">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email kamu">
+          </div>
+          <div class="box">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <div class="forgot-pass">
+            <div>
+                <input type="checkbox" id="remember">
+                <label for="remember">Ingat saya</label>
+            </div>
+            <a href="#">Lupa?</a>
+          </div>
+          <button type="button" class="btn">Login</button>
+          <p>Belum join? <a href="#" id="switch-to-register">Daftar disini</a></p>
+        </form>
+      </div>
+
+      <div class="register-form" id="register-form-box" style="display: none;">
+        <h3>Daftar Membership</h3>
+        <form action="">
+          <div class="box">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Nama Lengkap">
+          </div>
+          <div class="box">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="box">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password">
+          </div>
+          <button type="button" class="btn">Daftar</button>
+          <p>Sudah punya akun? <a href="#" id="switch-to-login">Login</a></p>
+        </form>
+      </div>
+    </div>
+    <!-- End User Menu -->
   </nav>
-  <!-- Navbar end -->
+  <!-- End Navbar -->
 
-  <!-- Hero Section start -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="mask-container">
-      <main class="content">
-        <h1>Nikmati Secangkir <span>Kopi</span></h1>
-        <p>"Bukan sekadar rasa, tapi cerita. Teman terbaik untuk jiwamu yang lelah."</p>
-        <a href="#menu" class="cta">Pesan Sekarang</a>
-      </main>
-    </div>
+    <main class="content">
+      <div class="badge-hero fade-in-up">Est. 1997</div>
+      <h1 class="fade-in-up delay-1">Nikmati <br> <span class="italic-font typing-effect">Rasa & Cerita</span></h1>
+      <p class="fade-in-up delay-2">Teman terbaik untuk jiwamu yang lelah. Vibes vintage, rasa modern. Jangan lupa istirahat sebelum... ya, kau tahu.</p>
+      <div class="hero-buttons fade-in-up delay-3">
+          <a href="#menu" class="cta">Pesan Sekarang</a>
+          <a href="#about" class="cta-outline">Tentang Kami</a>
+      </div>
+    </main>
   </section>
-  <!-- Hero Section end -->
+  <!-- End Hero Section -->
 
-  <!-- About Section start -->
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <div class="marquee-content">
+      <span>FRESH BREW ✦ OPEN DAILY ✦ GOOD VIBES ✦ VINTAGE SOUL ✦ LOCAL ROASTERY ✦ COMFORT SPACE ✦ PREMIUM BEANS ✦ </span>
+      <span>FRESH BREW ✦ OPEN DAILY ✦ GOOD VIBES ✦ VINTAGE SOUL ✦ LOCAL ROASTERY ✦ COMFORT SPACE ✦ PREMIUM BEANS ✦ </span>
+    </div>
+  </div>
+  <!-- End Marquee -->
+
+  <!-- About Section -->
   <section id="about" class="about">
     <h2><span>Tentang</span> Kami</h2>
+    
+    <div class="row">
+      <div class="about-img hover-tilt reveal">
+        <img src="img/tentang-kami.webp" alt="Tentang Kami">
+        <div class="img-border"></div>
+      </div>
+      <div class="content reveal">
+        <h3>Kenapa <span class="logo-text">Minum<span class="italic-font">Kopi</span></span>?</h3>
+        <p>Kami menyajikan kopi dengan jiwa. Dipetik oleh petani lokal, diseduh dengan hati. Tempat di mana masa lalu dan masa kini bertemu dalam satu cangkir.</p>
+        
+        <div class="features-container">
+            <div class="feature-box hover-bounce">
+                <i class="fas fa-seedling"></i>
+                <span>Organic</span>
+            </div>
+            <div class="feature-box hover-bounce">
+                <i class="fas fa-wifi"></i>
+                <span>Fast Wifi</span>
+            </div>
+            <div class="feature-box hover-bounce">
+                <i class="fas fa-couch"></i>
+                <span>Cozy Spot</span>
+            </div>
+            <div class="feature-box hover-bounce">
+                <i class="fas fa-record-vinyl"></i>
+                <span>Vinyl Music</span>
+            </div>
+        </div>
+        <a href="#products" class="cta-small">Lihat Koleksi</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2><span>Menu</span> Pilihan</h2>
+    
+    <div class="menu-container">
+      <div class="menu-column reveal">
+        <h3 class="menu-category">Coffee & Brew</h3>
+        
+        <div class="menu-item">
+          <div class="menu-info">
+            <h4>Espresso</h4>
+            <span class="dots"></span>
+            <div class="price">18K</div>
+          </div>
+          <p>Single shot pure extract</p>
+          <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-info">
+            <h4>Cappuccino</h4>
+            <span class="dots"></span>
+            <div class="price">25K</div>
+          </div>
+          <p>Espresso, steamed milk, foam</p>
+          <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+         <div class="menu-item highlight">
+          <div class="menu-info">
+            <h4>V60 Manual <span class="badge">Best</span></h4>
+            <span class="dots"></span>
+            <div class="price">28K</div>
+          </div>
+          <p>Pour-over method, clean taste</p>
+          <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+          <div class="menu-info">
+            <h4>Latte Art</h4>
+            <span class="dots"></span>
+            <div class="price">25K</div>
+          </div>
+          <p>Espresso with microfoam milk</p>
+          <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+        
+        <div class="menu-item">
+            <div class="menu-info">
+              <h4>Vietnam Drip</h4>
+              <span class="dots"></span>
+              <div class="price">20K</div>
+            </div>
+            <p>Traditional drip with condensed milk</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+
+      <div class="menu-column reveal">
+        <h3 class="menu-category">Cold & Bites</h3>
+
+        <div class="menu-item">
+            <div class="menu-info">
+              <h4>Iced Americano</h4>
+              <span class="dots"></span>
+              <div class="price">22K</div>
+            </div>
+            <p>Espresso with cold water</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="menu-item highlight">
+            <div class="menu-info">
+              <h4>Caramel Macchiato <span class="badge">Fav</span></h4>
+              <span class="dots"></span>
+              <div class="price">30K</div>
+            </div>
+            <p>Espresso, vanilla & caramel</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+         <div class="menu-item">
+            <div class="menu-info">
+              <h4>Cold Brew</h4>
+              <span class="dots"></span>
+              <div class="price">25K</div>
+            </div>
+            <p>Steeped for 12 hours</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-info">
+              <h4>Kopi Tubruk</h4>
+              <span class="dots"></span>
+              <div class="price">15K</div>
+            </div>
+            <p>Authentic Indonesian style</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+
+        <div class="menu-item">
+            <div class="menu-info">
+              <h4>Croissant</h4>
+              <span class="dots"></span>
+              <div class="price">25K</div>
+            </div>
+            <p>Buttery & Flaky</p>
+            <button class="add-cart-btn"><i class="fas fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Menu Section -->
+
+  <!-- Products Section -->
+  <section id="products" class="products">
+    <h2><span>Produk</span> Beans</h2>
 
     <div class="row">
-      <div class="about-img">
-        <img src="img/tentang-kami.jpg" alt="Tentang Kami">
+      <div class="product-card hover-float reveal">
+        <div class="product-image">
+          <img src="img/product/product-1.webp" alt="Product 1">
+          <div class="product-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-content">
+          <h3>Arabica Gayo</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+          <div class="price">IDR 85K</div>
+        </div>
       </div>
-      <div class="content">
-        <h3>Kenapa memilih <span class="logo-text">Minum<span>Kopi</span></span>?</h3>
-        
-        <p>Bukan sekadar air hitam biasa. Kami menggunakan biji kopi pilihan dari petani lokal terbaik, diproses dengan teknik roasting presisi untuk mengeluarkan karakter rasa yang mendalam dan aroma yang memikat.</p>
-        
-        <p>Lebih dari sekadar rasa, kami menawarkan ketenangan. Tempat yang sempurna untuk lari sejenak dari kebisingan dunia, entah untuk bekerja, melamun, atau sekadar menikmati waktu yang berjalan lambat.</p>
+
+      <div class="product-card hover-float reveal">
+        <div class="product-image">
+          <img src="img/product/product-2.webp" alt="Product 2">
+          <div class="product-icons">
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-eye"></i></a>
+          </div>
+        </div>
+        <div class="product-content">
+          <h3>Robusta Toraja</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="price">IDR 75K</div>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- About Section end -->
-
-  <!-- Menu Section start -->
-  <section id="menu" class="menu">
-    <h2><span>Menu</span> Kami</h2>
-
-    <div class="menu-container">
       
-      <div class="menu-column">
-        <h3 class="menu-category">Hot Coffee</h3>
-        
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Espresso</h4>
-            <p>Single shot pure coffee extract</p>
-          </div>
-          <div class="menu-item-price">18K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+       <div class="product-card hover-float reveal">
+        <div class="product-image">
+            <img src="img/product/product-3.webp" alt="Product 3">
+            <div class="product-icons">
+              <a href="#"><i class="fas fa-shopping-cart"></i></a>
+              <a href="#"><i class="fas fa-eye"></i></a>
+            </div>
         </div>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Americano</h4>
-            <p>Espresso with hot water</p>
+        <div class="product-content">
+          <h3>House Blend</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
           </div>
-          <div class="menu-item-price">20K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Cappuccino</h4>
-            <p>Espresso, steamed milk, & foam</p>
-          </div>
-          <div class="menu-item-price">25K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-        
-         <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Cafe Latte</h4>
-            <p>Espresso with steamed milk</p>
-          </div>
-          <div class="menu-item-price">25K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
+          <div class="price">IDR 95K</div>
         </div>
       </div>
-
-      <div class="menu-column">
-        <h3 class="menu-category">Cold Brew & Others</h3>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Iced Americano</h4>
-            <p>Espresso with cold water & ice</p>
-          </div>
-          <div class="menu-item-price">22K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Caramel Macchiato</h4>
-            <p>Espresso, milk, vanilla & caramel</p>
-          </div>
-          <div class="menu-item-price">30K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Matcha Latte</h4>
-            <p>Pure matcha with fresh milk</p>
-          </div>
-          <div class="menu-item-price">28K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-
-        <div class="menu-item">
-          <div class="menu-item-text">
-            <h4>Chocolate Signature</h4>
-            <p>Dark chocolate with milk</p>
-          </div>
-          <div class="menu-item-price">26K</div>
-          <button class="add-cart-btn"><i data-feather="plus"></i></button>
-        </div>
-      </div>
-
     </div>
   </section>
-  <!-- Menu Section end -->
+  <!-- End Products Section -->
 
-  <!-- Contact Section start -->
+  <!-- Reviews Section -->
+  <section class="reviews" id="reviews">
+    <h2><span>Kata</span> Mereka</h2>
+    
+    <div class="row">
+      <div class="review-card reveal">
+        <i class="fas fa-quote-right quote-icon"></i>
+        <p>"Vibe-nya dapet banget buat ngerjain tugas kampus. Musiknya asik, kopinya strong!"</p>
+        <div class="user-profile">
+            <img src="img/profile/profile-1.webp" alt="testimoni">
+            <div class="user-info">
+            <h3>Ahmad Z.</h3>
+            <span>Mahasiswa</span>
+            </div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <i class="fas fa-quote-right quote-icon"></i>
+        <p>"Estetik parah! Baristanya ramah, tempatnya nyaman buat bengong atau kerja."</p>
+        <div class="user-profile">
+            <img src="img/profile/profile-2.webp" alt="testimoni">
+            <div class="user-info">
+            <h3>Siti Aminah</h3>
+            <span>Freelancer</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Reviews Section -->
+
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <h2><span>Kontak</span> Kami</h2>
-    <p>Setiap cangkir punya cerita, dan ceritamu dimulai di sini. Kunjungi kami untuk pengalaman rasa yang tak terlupakan.
-    </p>
-
-    <div class="row">
-      <iframe
-        src="https://maps.google.com/maps?q=Pamekasan,+Jawa+Timur&t=&z=13&ie=UTF8&iwloc=&output=embed"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+    
+    <div class="row reveal">
+      <iframe src="https://maps.google.com/maps?q=Pamekasan,+Jawa+Timur&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
       <form action="">
         <div class="input-group">
           <i data-feather="user"></i>
-          <input type="text" placeholder="nama">
+          <input type="text" placeholder="Nama">
         </div>
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input type="text" placeholder="email">
+          <input type="text" placeholder="Email">
         </div>
         <div class="input-group">
           <i data-feather="phone"></i>
-          <input type="text" placeholder="no hp">
+          <input type="text" placeholder="No HP">
         </div>
-        <button type="submit" class="btn">kirim pesan</button>
+        <button type="submit" class="btn">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
       </form>
-
     </div>
   </section>
-  <!-- Contact Section end -->
+  <!-- End Contact Section -->
 
-  <!-- Footer start -->
+  <!-- Footer -->
   <footer>
-    <div class="socials">
-      <a href="#"><i data-feather="instagram"></i></a>
-      <a href="#"><i data-feather="twitter"></i></a>
-      <a href="#"><i data-feather="facebook"></i></a>
-    </div>
+    <div class="footer-content">
+        <div class="socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
 
-    <div class="links">
-      <a href="#home">Home</a>
-      <a href="#about">Tentang Kami</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Kontak</a>
+        <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#menu">Menu</a>
+        <a href="#products">Produk</a>
+        <a href="#contact">Kontak</a>
+        </div>
     </div>
 
     <div class="credit">
-      <p>Created by <a href="https://github.com/ofikur" target="_blank" >Ofikur R.</a>. | &copy; 2025.</p>
+      <p>© 2025 MinumKopi. All rights reserved.</p>
+      <p>Created by <a href="https://github.com/ofikur" target="_blank">Ofikur R.</a></p>
     </div>
   </footer>
-  <!-- Footer end -->
+  <!-- End Footer -->
 
-  <!-- Feather Icons -->
-  <script>
-    feather.replace()
-  </script>
-
-  <!-- My Javascript -->
+  <script>feather.replace()</script>
   <script src="js/script.js"></script>
 </body>
-
 </html>
